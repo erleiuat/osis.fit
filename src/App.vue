@@ -1,31 +1,33 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+    <b-container>
+        <b-jumbotron header="BootstrapVue" lead="Bootstrap v4 Components for Vue.js 2">
+            <p>For more information visit our website</p>
+            <b-btn variant="primary" href="https://bootstrap-vue.js.org/">More Info</b-btn>
+        </b-jumbotron>
+
+        <b-form-group horizontal :label-cols="4" description="Let us know your name." label="Enter your name">
+            <b-form-input v-model.trim="name"></b-form-input>
+        </b-form-group>
+
+        <b-alert variant="success" :show="showAlert">Hello {{ name }}</b-alert>
+    </b-container>
 </template>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-}
+<script>
+export default {
+    name: 'App',
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+    data () {
+        return {
+            name: ''
+        }
+    },
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+    computed: {
+        showAlert () {
+            return this.name.length > 4 ? true : false
+        }
+    }
+
 }
-</style>
+</script>
