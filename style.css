@@ -152,7 +152,7 @@ input:-webkit-autofill:focus {
     text-align: center;
     line-height: 2.5em;
     background-color: #ffffff;
-    color: #138fc2;
+    color: #3D85C6;
     border-radius: 100px;
     -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.1);
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.1);
@@ -160,7 +160,7 @@ input:-webkit-autofill:focus {
 }
 
 .social-menu li a:hover {
-    background-color: #138fc2;
+    background-color: #3D85C6;
     color: #ffffff;
     -webkit-box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.1);
     box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.1);
@@ -172,10 +172,10 @@ input:-webkit-autofill:focus {
 
 .overlay:before,
 .sky-bg {
-    background: #75cbe7;
-    background: -webkit-gradient(linear, left top, left bottom, from(#75cbe7), to(#138fc2));
-    background: linear-gradient(to bottom, #75cbe7 0%, #138fc2 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#75cbe7', endColorstr='#138fc2', GradientType=0);
+    background: #4DBEEE;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgb(64, 100, 116)), to(#3D85C6));
+    background: linear-gradient(to bottom, #4DBEEE 0%, #3D85C6 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4DBEEE', endColorstr='#3D85C6', GradientType=0);
     color: #ffffff;
 }
 
@@ -192,7 +192,7 @@ input:-webkit-autofill:focus {
     padding: 8px 30px;
     border-radius: 50px;
     color: #ffffff;
-    background-color: #2f60c3;
+    background-color: #3D85C6;
     -webkit-transition: 0.3s;
     transition: 0.3s;
     border: none;
@@ -203,11 +203,11 @@ input:-webkit-autofill:focus {
 .button.white,
 .button:hover {
     background-color: #ffffff;
-    color: #138fc2;
+    color: #3D85C6;
 }
 
 .button.white:hover {
-    background-color: #2f60c3;
+    background-color: #3D85C6;
     color: #ffffff;
 }
 
@@ -357,7 +357,7 @@ input:-webkit-autofill:focus {
 }
 
 .mainmenu-area.affix {
-    background-color: #138fc2;
+    background-color: #3D85C6;
 }
 
 
@@ -372,7 +372,7 @@ input:-webkit-autofill:focus {
 }
 
 .anlge-bg {
-    background: url('images/angle-bg.png') no-repeat scroll center bottom -120px / 100% auto;
+    background: url('images/angle-bg.png') no-repeat scroll center bottom -5px / 100% auto;
 }
 
 .overlay {
@@ -713,7 +713,7 @@ input:-webkit-autofill:focus {
     top: 20px;
     width: 36px;
     height: 36px;
-    background: #2f60c3;
+    background: #3D85C6;
     border-radius: 50%;
     -webkit-transition: 0.3s;
     transition: 0.3s;
@@ -867,10 +867,10 @@ preloader
     left: 0;
     width: 100%;
     height: 100%;
-    background: #75cbe7;
-    background: -webkit-gradient(linear, left top, left bottom, from(#75cbe7), to(#138fc2));
-    background: linear-gradient(to bottom, #75cbe7 0%, #138fc2 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#75cbe7', endColorstr='#138fc2', GradientType=0);
+    background: #4DBEEE;
+    background: -webkit-gradient(linear, left top, left bottom, from(#4DBEEE), to(#3D85C6));
+    background: linear-gradient(to bottom, #4DBEEE 0%, #3D85C6 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4DBEEE', endColorstr='#3D85C6', GradientType=0);
     z-index: 99999999999;
 }
 
