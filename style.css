@@ -31,7 +31,7 @@ CSS INDEX
 1. Google font
 ------------------*/
 
-@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700');
 
 /*-------------------
 2. Theme Default CSS
@@ -75,7 +75,7 @@ body {
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-weight: 400;
     font-size: 15px;
     line-height: 1.8;
@@ -368,7 +368,7 @@ input:-webkit-autofill:focus {
 
 .client-area,
 .header-area {
-    background: #000000 url('images/parallax-2.jpg') no-repeat scroll center center / cover;
+    background: #000000 url('images/bgs/header.jpg') no-repeat scroll center center / cover;
 }
 
 .anlge-bg {
@@ -445,6 +445,7 @@ input:-webkit-autofill:focus {
     position: static;
     margin: 30px auto 0 auto;
     padding: 0;
+    overflow: hidden;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
     display: -webkit-box;
     display: -ms-flexbox;
