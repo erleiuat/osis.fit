@@ -122,6 +122,7 @@ input:-webkit-autofill:focus {
 }
 
 .v-center {
+    height: 100vh;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -371,10 +372,11 @@ input:-webkit-autofill:focus {
     background: #000000 url('images/bgs/header.jpg') no-repeat scroll center center / cover;
 }
 
+/*
 .anlge-bg {
     background: url('images/bgs/angle-bg.png') no-repeat scroll center bottom -5px / 100% auto;
 }
-
+*/
 .overlay {
     position: relative;
 }
