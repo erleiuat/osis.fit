@@ -117,7 +117,7 @@
 
 
     //Function to animate slider captions 
-    function doAnimations(elems) {
+    function doAnimations (elems) {
         //Cache the animationend event in a variable
         var animEndEv = 'webkitAnimationEnd animationend';
 
