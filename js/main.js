@@ -13,7 +13,7 @@
     /*WoW js Active
     =================*/
     new WOW().init({
-        mobile: false
+        mobile: true
     });
 
     /* Scroll to top
