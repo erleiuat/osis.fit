@@ -793,11 +793,6 @@ input:-webkit-autofill:focus {
     z-index: 1;
 }
 
-.footer-bg {
-    background: url('images/bgs/angle-bg.png') no-repeat scroll center bottom / 100% auto;
-    z-index: -1;
-}
-
 .footer-top {
     margin-bottom: 150px;
 }

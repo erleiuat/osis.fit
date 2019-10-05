@@ -1,17 +1,21 @@
 (function ($) {
 
     "use strict";
+
     $(".carousel-inner .item:first-child").addClass("active");
+
     /* Mobile menu click then remove
     ==========================*/
     $(".mainmenu-area #mainmenu li a").on("click", function () {
         $(".navbar-collapse").removeClass("in");
     });
+
     /*WoW js Active
     =================*/
     new WOW().init({
-        mobile: true,
+        mobile: false
     });
+
     /* Scroll to top
     ===================*/
     $.scrollUp({
@@ -20,19 +24,7 @@
         scrollSpeed: 900,
         animation: 'fade'
     });
-    /* testimonials Slider Active
-    =============================*/
-    $('.testimonials').owlCarousel({
-        loop: true,
-        margin: 0,
-        responsiveClass: true,
-        nav: true,
-        autoplay: true,
-        autoplayTimeout: 4000,
-        smartSpeed: 1000,
-        navText: ['<i class="ti-arrow-left"></i>', '<i class="ti-arrow-right" ></i>'],
-        items: 1
-    });
+
     /* testimonials Slider Active
     =============================*/
     $('.screen-slider').owlCarousel({
@@ -41,7 +33,7 @@
         responsiveClass: true,
         nav: true,
         autoplay: true,
-        autoplayTimeout: 4000,
+        autoplayTimeout: 3000,
         smartSpeed: 1000,
         navText: ['<i class="ti-arrow-left"></i>', '<i class="ti-arrow-right" ></i>'],
         items: 1,
@@ -49,29 +41,7 @@
         animateOut: 'fadeOut',
         center: true,
     });
-    /* testimonials Slider Active
-    =============================*/
-    $('.clients').owlCarousel({
-        loop: true,
-        margin: 30,
-        responsiveClass: true,
-        nav: true,
-        autoplay: true,
-        autoplayTimeout: 4000,
-        smartSpeed: 1000,
-        navText: ['<i class="ti-arrow-left"></i>', '<i class="ti-arrow-right" ></i>'],
-        responsive: {
-            0: {
-                items: 3,
-            },
-            600: {
-                items: 4
-            },
-            1000: {
-                items: 6
-            }
-        }
-    });
+
     /*--------------------
        MAGNIFIC POPUP JS
        ----------------------*/
@@ -100,6 +70,7 @@
             }
         });
     };
+
     // Call the functions 
     magnifPopup();
 
@@ -108,13 +79,7 @@
     $('.price-area').parallax("50%", -0.5);
     $('.testimonial-area').parallax("10%", -0.2);
 
-
     $('#accordion .panel-title a').prepend('<span></span>');
-
-
-
-
-
 
     //Function to animate slider captions 
     function doAnimations (elems) {
@@ -122,8 +87,8 @@
         var animEndEv = 'webkitAnimationEnd animationend';
 
         elems.each(function () {
-            var $this = $(this),
-                $animationType = $this.data('animation');
+            var $this = $(this);
+            var $animationType = $this.data('animation');
             $this.addClass($animationType).one(animEndEv, function () {
                 $this.removeClass($animationType);
             });
@@ -131,18 +96,19 @@
     }
 
     //Variables on page load 
-    var $myCarousel = $('.caption-slider'),
-        $firstAnimatingElems = $myCarousel.find('.item:first').find("[data-animation ^= 'animated']");
+    var $myCarousel = $('.caption-slider');
+    var $firstAnimatingElems = $myCarousel.find('.item:first').find("[data-animation ^= 'animated']");
 
     //Initialize carousel 
-    $myCarousel.carousel();
+    $myCarousel.carousel({
+        interval: 9000
+    });
 
     //Animate captions in first slide on page load 
     doAnimations($firstAnimatingElems);
 
     //Pause carousel  
     $myCarousel.carousel('pause');
-
 
     //Other slides to be animated on carousel slide event 
     $myCarousel.on('slide.bs.carousel', function (e) {
@@ -151,48 +117,37 @@
     });
 
 
-
-
-
     // Select all links with hashes
-    $('.mainmenu-area a[href*="#"]')
-        // Remove links that don't actually link to anything
-        .not('[href="#"]')
-        .not('[href="#0"]')
-        .click(function (event) {
-            // On-page links
-            if (
-                location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') &&
-                location.hostname == this.hostname
-            ) {
-                // Figure out element to scroll to
-                var target = $(this.hash);
-                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-                // Does a scroll target exist?
-                if (target.length) {
-                    // Only prevent default if animation is actually gonna happen
-                    event.preventDefault();
-                    $('html, body').animate({
-                        scrollTop: target.offset().top
-                    }, 1000, function () {
-                        // Callback after animation
-                        // Must change focus!
-                        var $target = $(target);
-                        $target.focus();
-                        if ($target.is(":focus")) { // Checking if the target was focused
-                            return false;
-                        } else {
-                            $target.attr('tabindex', '-1'); // Adding tabindex for elements not focusable
-                            $target.focus(); // Set focus again
-                        };
-                    });
-                }
+    $('.mainmenu-area a[href*="#"]').not('[href="#"]').not('[href="#0"]').click(function (event) {
+        // On-page links
+        if (
+            location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') &&
+            location.hostname == this.hostname
+        ) {
+            // Figure out element to scroll to
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+            // Does a scroll target exist?
+            if (target.length) {
+                // Only prevent default if animation is actually gonna happen
+                event.preventDefault();
+                $('html, body').animate({
+                    scrollTop: target.offset().top
+                }, 1000, function () {
+                    // Callback after animation
+                    // Must change focus!
+                    var $target = $(target);
+                    $target.focus();
+                    if ($target.is(":focus")) { // Checking if the target was focused
+                        return false;
+                    } else {
+                        $target.attr('tabindex', '-1'); // Adding tabindex for elements not focusable
+                        $target.focus(); // Set focus again
+                    };
+                });
             }
-        });
-
-
-
-
+        }
+    });
 
 
     /* Preloader Js
@@ -200,4 +155,5 @@
     $(window).on("load", function () {
         $('.preloader').fadeOut(500);
     });
+
 })(jQuery);
